@@ -26,8 +26,16 @@ fs.readFile('./test1.txt', (err, content) => {
 // qnd eu faço um callback, eu falo que vou chamar depois, qnd eu vou fazer uma promise eu já retorno de imediato que no futuro eu retorno algo
 
 const readFile = file => new Promise((resolve, reject) => {  //dado uma promessa eu tenho duas opções, eu faço algo(resolvo) ou eu rejeito algo
-    fs.readFile('./text1',)
+    fs.readFile(file, (err, contents) => { //o famoso callback
+        if (err) { //se deu erro! (se erro = true)
+            reject(err) // eu rejeito
+        } else {  //senão eu aceito
+            resolve(contents) // eu resolvo o conteudo
+        }
+    })
 })
+
+readFile('./text2.txt')
 
 
 
