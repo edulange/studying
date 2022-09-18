@@ -35,7 +35,14 @@ const readFile = file => new Promise((resolve, reject) => {  //dado uma promessa
     })
 })
 
-readFile('./text2.txt')
+readFile('./test2.txt') //com o promise o código cresce para 'baixo', sempre deve-se fazer isso.
+        .then(contents => {
+            console.log('a', String(contents))
+            return readFile('./test1.txt')
+    })
+    .then(contents => {
+        console.log('deu certo',String(contents))
+    })
 
 
 
