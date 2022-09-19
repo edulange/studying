@@ -8,15 +8,22 @@ simule o sleep de maneira correta
  em Javascript (sem travar a thread principal) utilizando promises e uma função async/await
 */
 
-console.log('testando')
-
-function greetings() {
-	console.log('Foi')
-}
-
+/*
 const sleep = (tempo) => {
 	setTimeout(() => {
-		console.log('foi')
+		console.log('Depois de', (tempo/1000) + 's')
 	}, tempo);
 }
 sleep(1000)
+*/
+
+const sleep = (time) =>
+	new Promise((resolve) => {
+		setTimeout(resolve, time);
+	});
+const execute = async () => {
+	console.log("Olá!");
+	await sleep(2000);
+	console.log("Depois de 2segs");
+};
+execute()
