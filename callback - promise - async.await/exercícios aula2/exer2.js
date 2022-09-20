@@ -21,3 +21,5 @@ const readFile = (file) =>
 			}
 		});
 	});
+
+fs.readdir("./").then((contents) => console.log(contents));
