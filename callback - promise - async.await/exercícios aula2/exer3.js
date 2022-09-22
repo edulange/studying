@@ -19,4 +19,37 @@ Algumas funções do fs e de Promises que te ajudarão:
 
    })
 */
-const fs = require('fs')
+const fs = require("fs");
+
+const readdir = (files) =>
+	new Promise((resolve, reject) => {
+		//dado uma promessa eu tenho duas opções, eu faço algo(resolvo) ou eu rejeito algo
+		fs.readdir(files, (err, arquivos) => {
+			//o famoso callback
+			if (err) {
+				//se deu erro! (se erro = true)
+				reject(err); // eu rejeito
+			} else {
+				//senão eu aceito
+				resolve(arquivos); // eu resolvo o conteudo
+			}
+		});
+	});
+
+const stat = caminho = new Promise((resolve, reject) => {
+  fs.stat(caminho, (err, resolve) => {
+    if (err) {
+      reject(err)
+    } else {
+      resolve(stats)
+    }
+  })
+})
+
+const execute = async () => {
+	const files = await readdir("./");
+  const stats = await stat(files[0])
+
+	console.log(files[0], stats.isDirectory());
+};
+execute();
