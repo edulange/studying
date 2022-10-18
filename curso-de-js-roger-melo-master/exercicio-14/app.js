@@ -34,13 +34,15 @@ numbers.forEach((numero) => {
     - Se o número é ímpar, exiba-o na cor "pink".
 */
 
-const unorderList = document.getElementsByClassName('numbers')
-const listItems = Array.from(unorderList[0].children)
-console.log(listItems)
+const unorderList = document.getElementsByClassName("numbers");
+const listItems = Array.from(unorderList[0].children);
+console.log(listItems);
 
-listItems.forEach(li => {
-  //qual o problema aqui? eu preciso pegar o value do li, logo li.innerHTML
-    li.innerHTML % 2 === 0 ? li.style.color = 'lightblue' : li.style.color = 'pink'
+listItems.forEach((li) => {
+	//qual o problema aqui? eu preciso pegar o value do li, logo li.innerHTML
+	li.innerHTML % 2 === 0
+		? (li.style.color = "lightblue")
+		: (li.style.color = "pink");
 });
 
 /*
@@ -50,6 +52,7 @@ listItems.forEach(li => {
 
   P.s: a classe "body-background" já está declarada no style.css.
 */
+document.body.classList.add("body-background");
 
 /*
   05
@@ -58,6 +61,7 @@ listItems.forEach(li => {
     https://github.com/roger-melo-treinamentos/curso-de-js-roger-melo no href  
     do link do index.html.
 */
+const link = document.getElementsByClassName("link");
 
 /*
   06
