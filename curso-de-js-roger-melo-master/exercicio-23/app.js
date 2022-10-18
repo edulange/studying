@@ -1,3 +1,4 @@
+console.log('ex 23')
 /*
   01
 
@@ -5,7 +6,9 @@
   - Não modifique a string manualmente.
 */
 
+
 const myString = '    JS      '
+console.log(myString[3])
 
 /*
   02
