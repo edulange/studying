@@ -38,13 +38,10 @@ const unorderList = document.getElementsByClassName('numbers')
 const listItems = Array.from(unorderList[0].children)
 console.log(listItems)
 
-listItems.forEach
-
-
-
-// for (let i = 0; i < liElement.length; i++) {
-//   console.log(liElement[i]);
-// }
+listItems.forEach(li => {
+  //qual o problema aqui? eu preciso pegar o value do li, logo li.innerHTML
+    li.innerHTML % 2 === 0 ? li.style.color = 'lightblue' : li.style.color = 'pink'
+});
 
 /*
   04
