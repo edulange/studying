@@ -36,7 +36,7 @@ numbers.forEach((numero) => {
 
 const unorderList = document.getElementsByClassName("numbers");
 const listItems = Array.from(unorderList[0].children);
-console.log(listItems);
+
 
 listItems.forEach((li) => {
 	//qual o problema aqui? eu preciso pegar o value do li, logo li.innerHTML
@@ -61,30 +61,38 @@ document.body.classList.add("body-background");
     https://github.com/roger-melo-treinamentos/curso-de-js-roger-melo no href  
     do link do index.html.
 */
-const link = document.getElementsByClassName("link");
+const a = document.querySelector('[data-a]')
+a.setAttribute('href', 'https://github.com/roger-melo-treinamentos/curso-de-js-roger-melo')
 
 /*
   06
 
   - Exiba o novo valor do atributo href do link no console.
 */
-
+console.log(a.href)
 /*
   07
 
   - Exiba, no console, um objeto com todas as propriedades CSS que podem ser  
     manipuladas via JS no h1.
 */
+const h1 = document.getElementsByName('h1')
+console.log(h1)
+
+
 
 /*
   08
 
   - Remova a classe "body-background", do elemento body.
 */
-
+document.body.removeAttribute("class")
 /*
   09
 
   - Se o link da página possuir uma classe "link", remova-a;
   - Não utilize o método remove() para fazer isso.
 */
+
+a.removeAttribute("class")
+
