@@ -6,6 +6,13 @@
   - Exiba no console os elementos filhos da ul com a classe já inserida.
 */
 
+const ul = document.querySelector('[data-vtnc]')
+console.log(ul)
+
+for (const child of ul.children) {
+  child.classList.add('videos')
+}
+
 
 
 /*
@@ -15,6 +22,10 @@
     e exiba-o no console;
 */
 
+const h2 = document.getElementsByTagName('h2') // ele cria um array pq são "elements" mesmo sendo só 1.
+const paidoh2 = h2[0].parentNode //por isso precisa chamar na posição 0
+console.log(paidoh2)
+
 
 
 /*
@@ -23,6 +34,10 @@
   - Descubra quem é o próximo elemento irmão do h1 e exiba-o no console;
 */
 
+const h1 = document.getElementsByTagName('h1')
+const nextBrother = h1[0].nextElementSibling
+console.log(nextBrother)
+
 
 
 /*
@@ -30,7 +45,8 @@
 
   - Descubra quem é o irmão anterior da ul e exiba-o no console;
 */
-
+const previousSibling = ul.previousElementSibling
+console.log(previousSibling)
 
 
 /*
@@ -40,6 +56,7 @@
     exibida no console.
 */
 
+console.log(ul.children)
 
 
 /*
