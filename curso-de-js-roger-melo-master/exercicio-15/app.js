@@ -56,7 +56,14 @@ console.log(previousSibling)
     exibida no console.
 */
 
-console.log(ul.children)
+const li = Array.from(ul.children)
+
+
+li.forEach(item => {
+  item.addEventListener('click', () => {
+    console.log(item.innerHTML)
+  })
+});
 
 
 /*
@@ -76,6 +83,19 @@ const videos = [{
   name: 'Como fazer requisições HTTP com o método fetch | JavaScript',
   length: '00:02:55'
 }]
+
+
+const button = document.querySelector('[data-button]')
+
+button.addEventListener('click', () => {
+  for (const video of videos) {
+    const textInVideos = video.name
+    const newli = document.createElement('li')
+    ul.appendChild(textInVideos)    
+  }
+})
+
+
 
 /*
   07
