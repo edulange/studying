@@ -106,3 +106,18 @@ button.addEventListener('click', () => {
   - Se um clique no h1 acontecer, faça com que todos os elementos dentro do body 
     sejam removidos.
 */
+
+//q q eu preciso fazer:
+//1- ao clicar no h1 invocar uma função
+// a função deve deletar todos os filhos do body(elementos inside body)
+// pra isso eu preciso chamar o h1 pelo dom:
+// pra isso eu rpeciso chamar o body pelo dom:
+const h1Click = document.querySelector('[data-h1]') //ok
+
+h1Click.addEventListener('click', () => {  //click funcionando
+  const body = document.querySelector('#parent') //ok
+  while (body.firstChild) {
+    body.removeChild(body.firstChild)
+  }
+})
+//foi difícil mas deu :)
