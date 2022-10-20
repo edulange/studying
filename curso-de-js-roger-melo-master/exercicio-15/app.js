@@ -87,11 +87,14 @@ const videos = [{
 
 const button = document.querySelector('[data-button]')
 
+
 button.addEventListener('click', () => {
   for (const video of videos) {
     const textInVideos = video.name
-    const newli = document.createElement('li')
-    ul.appendChild(textInVideos)    
+    var ul = document.querySelector('[data-vtnc]')
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode(textInVideos));
+    ul.appendChild(li);
   }
 })
 
