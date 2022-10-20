@@ -3,6 +3,11 @@
 
   - No envio do form, faça com que a página não seja recarregada.
 */
+const button = document.querySelector('[data-button]')
+button.addEventListener('click', (event) => {
+  event.preventDefault()
+  console.log(input.value) //ex2
+})
 
 /*
   02
@@ -10,6 +15,10 @@
   - No envio do form obtenha, através do objeto event, o texto inserido no  
     input e exiba-o no console.
 */
+const input = document.getElementById('input')
+console.log(input)
+
+
 
 /*
   03
@@ -18,6 +27,11 @@
     index.html;
   - Exiba no console o boolean no qual este teste resulta.
 */
+const regex = /documentation/
+const a = document.querySelector('[data-a]').innerHTML
+const result = regex.test(a)
+console.log(result, 'regex')
+
 
 /*
   04
@@ -28,7 +42,9 @@
 */
 
 const B99message = 'E o Terry Crews faz tudo, inclusive tocar a abertura de B99 na flauta'
-
+const regex2 = /[ABC][1-9][1-9]/g
+const result2 = regex2.test(B99message)
+console.log(result, 'regex2')
 /*
   05
 
@@ -37,7 +53,7 @@ const B99message = 'E o Terry Crews faz tudo, inclusive tocar a abertura de B99 
 */
 
 const word = 'O que a NASA fotografou no dia do seu aniversário?'
-const NASARegex = /^[A-Z]{4}$/
+const NASARegex = /^[A-Z]/
 const NASAResult = NASARegex.test(word)
 
 console.log(NASAResult)
