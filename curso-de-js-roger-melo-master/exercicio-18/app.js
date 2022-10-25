@@ -21,35 +21,40 @@
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
 //começando do zero xD
-const form = document.getElementById('form')
-const username = document.getElementById('username')
-const p = document.createElement('p')
+const form = document.getElementById("form");
+const username = document.getElementById("username");
+const p = document.createElement("p");
 
 const pass_reg = /[a-zA-Z\d]{6,}$/;
 // merda de regex
 
-username.addEventListener('input', validate)
+username.addEventListener("input", validate);
 
 function validate(e) {
-  let target = e.target
+	let target = e.target;
 
-  if (pass_reg.test(target.value)) {
-    target.classList.add("username-success-feedback")
-    target.classList.remove("username-help-feedback")
-  } else {
-    target.classList.add("username-help-feedback")
-    target.classList.remove("username-success-feedback")
-  }
+	//como eu posso fazer o "p" ? se não existir o P adicionar o P se existir, ignorar
+	if (username.nextSibling !== p) {
+		username.insertAdjacentElement("afterend", p);
+		p.innerText =
+			"O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas";
+	}
+
+	if (pass_reg.test(target.value)) {
+		target.classList.add("username-success-feedback");
+		target.classList.remove("username-help-feedback");
+    p.innerText = "Username válido =)"
+	} else {
+		target.classList.add("username-help-feedback");
+		target.classList.remove("username-success-feedback");
+	}
 }
 
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault()
-
-    alert('submited')
-})
-
-
+	alert("submited");
+});
 
 /*
   02
