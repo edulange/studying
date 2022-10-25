@@ -23,16 +23,31 @@
 //começando do zero xD
 const form = document.getElementById('form')
 const username = document.getElementById('username')
+const p = document.createElement('p')
 
-username.addEventListener('keyup', (event) => {
-  const p = document.createElement('p')
+const pass_reg = /[a-zA-Z\d]{6,}$/;
+// merda de regex
 
-  while ( username.value.length ) {
-    form.insertAdjacentElement('beforeend', p)
-    console.log('precisa ter 6')
+username.addEventListener('input', validate)
+
+function validate(e) {
+  let target = e.target
+
+  if (pass_reg.test(target.value)) {
+    target.classList.add("username-success-feedback")
+    target.classList.remove("username-help-feedback")
+  } else {
+    target.classList.add("username-help-feedback")
+    target.classList.remove("username-success-feedback")
   }
-})
+}
 
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+    alert('submited')
+})
 
 
 
