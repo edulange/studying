@@ -24,6 +24,7 @@
 const form = document.getElementById("form");
 const username = document.getElementById("username");
 const p = document.createElement("p");
+const button = document.getElementById('button')
 
 const pass_reg = /[a-zA-Z\d]{6,}$/;
 // merda de regex
@@ -50,23 +51,40 @@ function validate(e) {
 	}
 }
 
-form.addEventListener("submit", (e) => {
-	e.preventDefault();
-
-	alert("submited");
-});
 
 /*
   02
 
   - Valide o envio do form;
   - Se o username inserido no input é válido, no envio do form, exiba um  
-    parágrafo verde abaixo do botão com a mensagem "Dados enviados =)";
+  parágrafo verde abaixo do botão com a mensagem "Dados enviados =)";
   - Se no momento do envio, o valor do input é inválido, o parágrafo deve ser  
-    vermelho e exibir "Por favor, insira um username válido".
+  vermelho e exibir "Por favor, insira um username válido".
   - Use as classes disponíveis no arquivo style.css para colorir o parágrafo;
   - Não insira o parágrafo manualmente no index.html.
-*/
+  */
+ 
+ //verificar se a class do form está como sucess ao apertar submit
+ //se sim, excluir o p, criar um p e adiciona-lo abaixo do botão com "dados enviados =)"
+ 
+ form.addEventListener("submit", (e) => {
+   e.preventDefault();
+  if( username.classList.contains("username-success-feedback") ) {
+    p.remove()
+    button.insertAdjacentElement("afterend", p)
+    p.classList.add("submit-success-feedback")
+    p.innerText = "Dados enviados =)"
+  } else {
+    p.remove()
+    button.insertAdjacentElement("afterend", p)
+    p.classList.add("submit-help-feedback")
+    p.innerText = "Por favor, insira um username válido"
+  }
+
+
+ });
+
+
 
 /*
   03
