@@ -20,32 +20,20 @@
   
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
-const username = document.getElementById('username')
+//começando do zero xD
 const form = document.getElementById('form')
+const username = document.getElementById('username')
 
+username.addEventListener('keyup', (event) => {
+  const p = document.createElement('p')
 
-const errorElement = document.getElementById('error')
-
-//preciso adicionar um eventlistener no form, provavelmente é um evento que apite no "ao digitar"
-form.addEventListener('submit', (event) => {
-  let messages = []
-  if (username.value === '' || username.value == null) {
-    messages.push('Username é requerido')
+  while ( username.value.length ) {
+    form.insertAdjacentElement('beforeend', p)
+    console.log('precisa ter 6')
   }
-
-  if(username.value.length <= 6) {
-    messages.push("O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas")
-  } else {
-    messages.push("Username válido =)")
-    username.classList.add('username-success-feedback')
-  }
-
-  if(messages.length > 0) {
-    event.preventDefault() // isso previne a página de submitir//"refresh", mas só quero isso se der algum erro
-    errorElement.innerText = messages.join(', ')
-  }   
-
 })
+
+
 
 
 /*
