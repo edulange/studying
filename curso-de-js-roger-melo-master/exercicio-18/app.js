@@ -103,3 +103,5 @@ function validate(e) {
         6;
     2) Pesquisar no MDN.
 */
+
+//  https://www.youtube.com/watch?v=AWIqJo_JOJY&ab_channel=RogerMelo
