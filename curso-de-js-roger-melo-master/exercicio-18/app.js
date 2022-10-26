@@ -104,4 +104,15 @@ function validate(e) {
     2) Pesquisar no MDN.
 */
 
-//  https://www.youtube.com/watch?v=AWIqJo_JOJY&ab_channel=RogerMelo
+const arr = [1 , 2 , 3, 0]
+
+function newSome(value, condicao) {
+  for (let i = 0; i < value.length; i++) {
+    const element = value[i];
+    if (element === 0) {
+      return console.log(true)
+    }
+  }
+  return console.log(false)
+}
+newSome(arr)
