@@ -8,12 +8,13 @@ Seu desafio é desenvolver uma versão do quiz que:
 - Exibe na tela a pontuação que o usuário fez. Não há certo ou errado, apenas faça. Essa exibição de pontos é uma das implementações que faremos na próxima aula =D
 
 Independente se você já fez o quiz dos filmes enquanto acompanhava a aula, busque fazer esse exercício sem rever partes da aula.
-
+    
 É importante que a sua versão do quiz seja feita apenas com o conteúdo que vimos até aqui.
 */
 
-const arr1 = [0, 1, 2]
+const button = document.querySelector('.btn')
+const questionsContainer = document.querySelector('.questions-container')
+button.addEventListener('click', () => {
+    questionsContainer.style.display = "inherit"
 
-const arr2 = ['ola', 'tudo?', ...arr1, 'foi?']
-
-console.log(arr2)
+})
