@@ -41,6 +41,9 @@ h3 {
 .questions-container {
     display: none;
 }
+.form-group_dois, .form-group_tres {
+    display: none;
+}
 
 input {
   margin: .4rem;  
