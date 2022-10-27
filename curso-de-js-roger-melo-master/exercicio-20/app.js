@@ -3,7 +3,7 @@
 
   - Insira apenas o css do bootstrap no index.html.
 */
-
+console.log("ola");
 
 /* 
   02
@@ -12,24 +12,14 @@
     mensagem "Um segundo e meio se passaram desde que a página foi carregada".
 */
 
-const myTimeOut = setTimeout(myHello, 1500)
-
-
-function contador() {
-  let count = 0
-  while (count < 100) {
-    count ++
-    console.log(count)
-  }
-
-}
-contador()
+const myTimeOut = setTimeout(myHello, 1500);
 
 function myHello() {
-  console.log("Um segundo e meio se passaram desde que a página foi carregada")
-  clearTimeout(myTimeOut)
+	console.log(
+		"Um segundo e meio se passaram desde que a página foi carregada"
+	);
+	clearTimeout(myTimeOut);
 }
-
 
 /* 
   03
@@ -37,6 +27,28 @@ function myHello() {
   - Faça o contador do index.html funcionar;
   - O clique no botão "Parar contador" deve fazer com que o contador exiba 0.
 */
+const buttonStart = document.querySelector(".button-init-counter");
+const buttonStop = document.querySelector(".button-stop-counter");
+const h1 = document.querySelector(".counter-container");
+let counter = 0;
+
+
+buttonStart.addEventListener("click", (e) => {
+  const timer = setInterval(() => {
+    counter++
+    h1.innerHTML = counter
+    console.log(`Se passaram ${counter} segundos`)
+  
+    if (counter ==5 ) {
+      clearInterval(timer)
+    }
+  }, 1000);
+  buttonStop.addEventListener('click', () => { // coloquei dentro aqui, pq pq ele vai parar se não foi iniciado o counter?
+    h1.innerHTML = "0"
+    clearInterval(timer)
+  })
+});
+
 
 
 
