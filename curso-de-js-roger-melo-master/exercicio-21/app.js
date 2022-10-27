@@ -7,6 +7,17 @@
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
+const onlyOddNumbers = randomNumbers.filter(number => {
+  if(number % 2 !== 0) {
+    return number
+  }
+})
+console.log(onlyOddNumbers, 'ex 1')
+function oddNumbers(number) {
+  if (number % 2 !== 0) {
+    return number
+  }
+}
 /*
   02
 
@@ -14,6 +25,12 @@ const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 */
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
+console.log(crazyNumbers.filter(lowerThan501), 'ex 2')
+function lowerThan501(number) {
+  if (number < 501) {
+    return number
+  }
+}
 
 /*
   03
@@ -23,6 +40,9 @@ const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 */
 
 const numbers = [5, 7, 3]
+const quadrado = numbers.map(num => num * num)
+console.log(numbers, quadrado, 'ex 3')
+
 
 /*
   04
@@ -42,6 +62,11 @@ const cart = [
   { name: 'Resident Evil 2', price: 119.90 },
   { name: 'Death Stranding', price: 149.99 }
 ]
+let counter = 1
+cart.map((item)=> {
+  console.log(`- ${item.name}`, counter)
+  counter++
+})
 
 /*
   - Nome 1
@@ -69,6 +94,9 @@ const tarantinoMovies = [
   { name: 'À Prova de Morte', release: 2007 },
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
+const earlierThan200 = tarantinoMovies.filter(element => {
+    element.
+})
 
 /*
   06
