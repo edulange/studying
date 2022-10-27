@@ -20,29 +20,28 @@ const questionTwo = document.querySelector(".form-group_dois");
 const questionThree = document.querySelector(".form-group_tres");
 let counter = 0;
 button.addEventListener("click", () => {
-    if (counter == 0)
-	questionsContainer.style.display = "inherit";
-    questionOne.style.display = "inherit";
+	if (counter == 0) questionsContainer.style.display = "inherit";
+	questionOne.style.display = "inherit";
 });
 
 send.addEventListener("click", () => {
 	counter = counter + 1;
 	if (counter == 1) {
-        console.log(counter, 'counter 1')
+		console.log(counter, "counter 1");
 		questionTwo.style.display = "inherit";
 		questionOne.style.display = "none";
 	}
-    if (counter == 2) {
-        console.log(counter, 'counter 2')
-        questionThree.style.display = 'inherit'
-        questionTwo.style.display = "none";
-        questionOne.style.display = "none";
-    }
-    if (counter == 3) {
-        console.log(counter, 'counter 3')
-        counter = 0
-        questionThree.style.display = 'none'
-        questionsContainer.style.display = "none";
-        console.log(counter)
-    }
+	if (counter == 2) {
+		console.log(counter, "counter 2");
+		questionThree.style.display = "inherit";
+		questionTwo.style.display = "none";
+		questionOne.style.display = "none";
+	}
+	if (counter == 3) {
+		console.log(counter, "counter 3");
+		counter = 0;
+		questionThree.style.display = "none";
+		questionsContainer.style.display = "none";
+		console.log(counter);
+	}
 });
