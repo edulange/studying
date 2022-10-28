@@ -135,12 +135,12 @@ const topBrazilmovies = [
 	},
 ];
 
-const DisneyWatch = topBrazilmovies.filter( movie => {
-  movie.distributedBy == "Disney" ? console.log('ok') : ''
-  return 'ok'
-})
+console.log(
+  topBrazilmovies
+  .filter(({ distributedBy }) => distributedBy === 'Disney')
+  .reduce( (accumulator, { peopleAmount }) => accumulator + peopleAmount, 0)
+, 'ex 7 filter + accu')
 
-console.log(DisneyWatch, 'ex 7')
 
 /*
   08
@@ -161,6 +161,20 @@ const pets = [
 	{ name: "Cristal", age: 3, gender: "Female", type: "Dog" },
 	{ name: "Chico", age: 6, gender: "Male", type: "Dog" },
 ];
+
+const getDogs = ({ type }) => type === "Dog"
+const convertToHumange = ({ name, age }) => ({
+  name,
+  convertedAge: age * 7 
+})
+
+
+console.log(
+  pets
+  .filter(getDogs)
+  .map(convertToHumange)
+  , 'ex 8')
+
 
 /*
   09
