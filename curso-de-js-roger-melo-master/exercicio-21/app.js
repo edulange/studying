@@ -94,10 +94,12 @@ const tarantinoMovies = [
   { name: 'À Prova de Morte', release: 2007 },
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
-const earlierThan200 = tarantinoMovies.filter(element => {
-    element.
+const earlierThan200 = tarantinoMovies.filter(movie => {
+  if (movie.release < 2000) {
+    return movie
+  }
 })
-
+console.log(earlierThan200, 'ex 5')
 /*
   06
 
@@ -114,6 +116,10 @@ const tvShows = [
   { name: 'House M.D.', releaseYear: 2004 },
   { name: 'Watchmen', releaseYear: 2019 }
 ]
+const onlyNames = tvShows.map((serie) => {
+  return serie.name
+})
+console.log(onlyNames, 'ex 6')
 
 /*
   07
