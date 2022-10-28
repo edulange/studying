@@ -62,6 +62,14 @@ const cart = [
   { name: 'Resident Evil 2', price: 119.90 },
   { name: 'Death Stranding', price: 149.99 }
 ]
+
+const productList = cart.reduce( (accumulator, { name }) => `${accumulator}-  ${name}\n `, ' ')
+console.log(productList)
+
+
+
+
+/*   ----------- o certo aqui era ter feito com o .reduce() entã ovamos fazer
 let counter = 1
 cart.map((item)=> {
   console.log(`- ${item.name}`, counter)
