@@ -183,6 +183,13 @@ console.log(
     os nomes dos filmes na ul do index.html.
 */
 
+const ul = document.querySelector('.list-group')
+topBrazilmovies.map( ({ title }) => {
+		var li = document.createElement("li");
+		li.appendChild(document.createTextNode(title));
+		ul.appendChild(li);
+})
+
 
 
 
