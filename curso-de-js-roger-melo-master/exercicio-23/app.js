@@ -8,7 +8,9 @@ console.log('ex 23')
 
 
 const myString = '    JS      '
-console.log(myString[3])
+console.log(myString.trim())
+
+
 
 /*
   02
@@ -25,6 +27,15 @@ const people = [
   { firstName: 'Felipe', lastName: 'Tavares', score: 71 },
   { firstName: 'Eric', lastName: 'Silva', score: 82 }
 ]
+
+const sorted = people.sort(function(a , b) {
+  if (a.score > b.score) {
+    return 1
+  } if (a.score < b.score) {
+    return -1
+  }
+})
+console.log(sorted, 'ex 1, arr.sort()')
 
 /*
   03
@@ -44,8 +55,11 @@ const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
   - Baseado no array "animals", gere um novo array com a quantidade de letras do 
     nome de cada animal. Ex.: [6, 8, 2].
 */
-
-
+const onlyLetters = []
+animals.map(element => {
+  onlyLetters.push(element.length)
+})
+console.log(onlyLetters)
 
 /*
   05
@@ -63,7 +77,15 @@ const friends = [
   { id: 5, name: 'Solange', nearMe: false }
 ]
 
+const friendsNear = [];
 
+friends.map ( element => {
+  if (element.nearMe == true) {
+    friendsNear.push(element.name)
+  }
+})
+
+console.log(friendsNear, 'ex 5 map + push')
 
 /*
   06
