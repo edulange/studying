@@ -5,7 +5,14 @@
     abaixo.
 */
 
-const message = 'Próxima etapa: 10'
+const message = "Próxima etapa: 10";
+
+for (let i = 0; i < message.length; i++) {
+	const element = message[i];
+	if (element === ":") {
+		console.log(true);
+	}
+}
 
 /*
   02
@@ -14,7 +21,10 @@ const message = 'Próxima etapa: 10'
     abaixo.
 */
 
-const numbers = [979, 2673, 41, 77, 276, 554, 399, 385, 65, 726, 635, 833, 462]
+const numbers = [979, 2673, 41, 77, 276, 554, 399, 385, 65, 726, 635, 833, 462];
+console.log(numbers.map( num => num == 635 ? true : false))
+
+
 
 /*
   A partir daqui, vamos treinar nossas skills de refatoração.
