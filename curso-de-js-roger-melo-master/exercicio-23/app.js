@@ -35,7 +35,7 @@ const sorted = people.sort(function(a , b) {
     return -1
   }
 })
-console.log(sorted, 'ex 1, arr.sort()')
+console.log(sorted, 'ex 2, arr.sort()')
 
 /*
   03
@@ -49,6 +49,8 @@ console.log(sorted, 'ex 1, arr.sort()')
 
 const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
 
+
+
 /*
   04
 
@@ -59,7 +61,7 @@ const onlyLetters = []
 animals.map(element => {
   onlyLetters.push(element.length)
 })
-console.log(onlyLetters)
+console.log(onlyLetters, 'ex 4')
 
 /*
   05
@@ -96,13 +98,12 @@ console.log(friendsNear, 'ex 5 map + push')
 
 const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
 
-function odssNumbers(number) {
+function oddsNumbers(number) {
   if (number % 2 !== 0) {
     return number
   }
 }
-
-
+console.log(numbers.filter(oddsNumbers).reduce((accumulator, number) => accumulator + number, 0)) // esse 0 é opcional
 
 /*
   07
@@ -124,3 +125,6 @@ const data = [{
   country: 'Indonesia',
   population: 263991379
 }]
+
+
+console.log(data.filter( ( {country}) => country !== "China").reduce((accumulator, { population }) => accumulator + population, 0))
