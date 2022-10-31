@@ -127,4 +127,4 @@ const data = [{
 }]
 
 
-console.log(data.filter( ( {country}) => country !== "China").reduce((accumulator, { population }) => accumulator + population, 0))
+console.log(data.filter( ( {country}) => country !== "China").reduce((accumulator, { population }) => accumulator + population, 0), 'filter + reduce')
