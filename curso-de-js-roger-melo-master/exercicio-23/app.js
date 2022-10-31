@@ -96,6 +96,14 @@ console.log(friendsNear, 'ex 5 map + push')
 
 const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
 
+function odssNumbers(number) {
+  if (number % 2 !== 0) {
+    return number
+  }
+}
+
+
+
 /*
   07
 
