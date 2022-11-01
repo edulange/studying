@@ -5,7 +5,17 @@
     formatação "DD/MM/AAAA". Exemplo: 03/07/2021;
   - Não utilize a date-fns.
 */
+const date = new Date()
+const formatTimeUnit = unit => String(unit).length === 1 ? `0${unit}` : unit
 
+const formatDate = date => {
+  const day = date.getDate()
+  const month = date.getMonth() + 1
+  const year = date.getFullYear()
+  return `${formatTimeUnit(day)}/${formatTimeUnit(month)}/${year}` //toppperrr
+}
+
+console.log(formatDate(date))
 /*
   02
 
@@ -13,6 +23,21 @@
     data na formatação: "03:07 - domingo, 7 de junho de 2020";
   - Não utilize a date-fns.
 */
+
+
+
+const formatDateInfo = date => {
+  const day = date.getDate()
+  const month = date.getMonth() + 1
+  const year = date.getFullYear()
+  const minutes = date.getMinutes()
+  const hours = date.getHours()
+  const daysInWeek = ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo']
+  return `${formatTimeUnit(hours)}:${formatTimeUnit(minutes)} - ${daysInWeek[day]}, ${day} de junho de ${year}`
+}
+
+console.log(formatDateInfo(date))
+
 
 /*
   03
@@ -23,7 +48,8 @@
 */
 
 const user = { id: 42, isVerified: true }
-
+const { id, isVerified } = user
+console.log(id, isVerified)
 /*
   04
 
