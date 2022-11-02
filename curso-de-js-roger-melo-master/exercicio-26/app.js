@@ -5,17 +5,18 @@
     formatação "DD/MM/AAAA". Exemplo: 03/07/2021;
   - Não utilize a date-fns.
 */
-const date = new Date()
-const formatTimeUnit = unit => String(unit).length === 1 ? `0${unit}` : unit
+const date = new Date();
+const formatTimeUnit = (unit) =>
+	String(unit).length === 1 ? `0${unit}` : unit;
 
-const formatDate = date => {
-  const day = date.getDate()
-  const month = date.getMonth() + 1
-  const year = date.getFullYear()
-  return `${formatTimeUnit(day)}/${formatTimeUnit(month)}/${year}` //toppperrr
-}
+const formatDate = (date) => {
+	const day = date.getDate();
+	const month = date.getMonth() + 1;
+	const year = date.getFullYear();
+	return `${formatTimeUnit(day)}/${formatTimeUnit(month)}/${year}`; //toppperrr
+};
 
-console.log(formatDate(date))
+console.log(formatDate(date));
 /*
   02
 
@@ -24,20 +25,42 @@ console.log(formatDate(date))
   - Não utilize a date-fns.
 */
 
+const formatDateInfo = (date) => {
+	const hours = formatTimeUnit(date.getHours());
+	const minutes = formatTimeUnit(date.getMinutes());
+	const weekDay = weekDays[date.getDay()];
+	const monthDay = date.getDate();
+	const month = monthsName[date.getMonth() + 1];
+	const year = date.getFullYear();
+	return `${hours}:${minutes} - ${weekDay}, ${monthDay} de ${month} de ${year}`;
+};
 
+const weekDays = [
+	"segunda",
+	"terça",
+	"quarta",
+	"quinta",
+	"sexta",
+	"sábado",
+	"domingo",
+];
+const monthsName = [
+	"janeiro",
+	"fevereiro",
+	"março",
+	"abril",
+	"maio",
+	"junho",
+	"julho",
+	"julho",
+	"agosto",
+	"setembro",
+	"outubro",
+	"novembro",
+	"dezembro",
+];
 
-const formatDateInfo = date => {
-  const day = date.getDate()
-  const month = date.getMonth() + 1
-  const year = date.getFullYear()
-  const minutes = date.getMinutes()
-  const hours = date.getHours()
-  const daysInWeek = ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo']
-  return `${formatTimeUnit(hours)}:${formatTimeUnit(minutes)} - ${daysInWeek[day]}, ${day} de junho de ${year}`
-}
-
-console.log(formatDateInfo(date))
-
+console.log(formatDateInfo(date));
 
 /*
   03
@@ -47,9 +70,9 @@ console.log(formatDateInfo(date))
   - Não modifique a declaração da const user.
 */
 
-const user = { id: 42, isVerified: true }
-const { id, isVerified } = user
-console.log(id, isVerified)
+const user = { id: 42, isVerified: true };
+const { id, isVerified } = user;
+console.log(id, isVerified);
 /*
   04
 
@@ -60,8 +83,8 @@ console.log(id, isVerified)
   - Não modifique a declaração das consts "robotA" e "robotB".
 */
 
-const robotA = { name: 'Bender' }
-const robotB = { name: 'HAL 9000' }
+const robotA = { name: "Bender" };
+const robotB = { name: "HAL 9000" };
 
 /*
   05
@@ -72,9 +95,9 @@ const robotB = { name: 'HAL 9000' }
   - Exiba o objeto no console.
 */
 
-const a = 'a'
-const b = 'b'
-const c = 'c'
+const a = "a";
+const b = "b";
+const c = "c";
 
 /*
   06
@@ -82,27 +105,27 @@ const c = 'c'
   - Refatore o código abaixo.
 */
 
-const useDataSomewhereElse = value => {
-  console.log(value)
-}
+const useDataSomewhereElse = (value) => {
+	console.log(value);
+};
 
 const updateSomething = (data = {}) => {
-  const target = data.target
-  const property = data.property
-  let willChange = data.willChange
+	const target = data.target;
+	const property = data.property;
+	let willChange = data.willChange;
 
-  if (willChange === 'valor indesejado') {
-    willChange = 'valor desejado'
-  }
+	if (willChange === "valor indesejado") {
+		willChange = "valor desejado";
+	}
 
-  useDataSomewhereElse({
-    target: target,
-    property: property,
-    willChange: willChange
-  })
-}
+	useDataSomewhereElse({
+		target: target,
+		property: property,
+		willChange: willChange,
+	});
+};
 
-updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
+updateSomething({ target: "1", property: "2", willChange: "valor indesejado" });
 
 /*
   07
@@ -111,21 +134,21 @@ updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
     passada. Refatore-o.
 */
 
-const clockContainer = document.querySelector('.clock-container')
+const clockContainer = document.querySelector(".clock-container");
 
 const updateClock = () => {
-  const present = new Date()
-  const hours = present.getHours()
-  const minutes = present.getMinutes()
-  const seconds = present.getSeconds()
+	const present = new Date();
+	const hours = present.getHours();
+	const minutes = present.getMinutes();
+	const seconds = present.getSeconds();
 
-  const clockHTML = `
+	const clockHTML = `
     <span>${String(hours).length === 1 ? `0${hours}` : hours}</span> :
     <span>${String(minutes).length === 1 ? `0${minutes}` : minutes}</span> :
     <span>${String(seconds).length === 1 ? `0${seconds}` : seconds}</span>
-  `
+  `;
 
-  clockContainer.innerHTML = clockHTML
-}
+	clockContainer.innerHTML = clockHTML;
+};
 
-setInterval(updateClock, 1000)
+setInterval(updateClock, 1000);
