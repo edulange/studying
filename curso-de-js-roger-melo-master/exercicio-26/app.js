@@ -86,16 +86,9 @@ console.log(id, isVerified);
 const robotA = { name: "Bender" };
 const robotB = { name: "HAL 9000" };
 
-console.log('//---------- destructuring')
-const pessoa = {
-	name: "Eduardo",
-	age: 28
-}
-const { age: idade } = pessoa
-console.log(idade)
-
-
-
+const { name: nameA } = robotA;
+const { name: nameB } = robotB;
+console.log(nameA, nameB);
 /*
   05
 
@@ -108,6 +101,13 @@ console.log(idade)
 const a = "a";
 const b = "b";
 const c = "c";
+
+const objectoNovo = {
+	a,
+	b,
+	c,
+};
+console.log(objectoNovo);
 
 /*
   06
