@@ -86,6 +86,16 @@ console.log(id, isVerified);
 const robotA = { name: "Bender" };
 const robotB = { name: "HAL 9000" };
 
+console.log('//---------- destructuring')
+const pessoa = {
+	name: "Eduardo",
+	age: 28
+}
+const { age: idade } = pessoa
+console.log(idade)
+
+
+
 /*
   05
 
