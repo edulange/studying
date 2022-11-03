@@ -124,14 +124,15 @@ const updateSomething = (data = {}) => {
 	const property = data.property;
 	let willChange = data.willChange;
 
+	
 	if (willChange === "valor indesejado") {
 		willChange = "valor desejado";
 	}
 
 	useDataSomewhereElse({
-		target: target,
-		property: property,
-		willChange: willChange,
+		target,
+		property,
+		willChange,
 	});
 };
 
