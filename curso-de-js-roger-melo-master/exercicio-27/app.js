@@ -4,6 +4,8 @@
   - Implemente um código assíncrono entre os console.log() abaixo.
 */
 
+
+
 console.log('Linha 1')
 console.log('Linha 2')
 console.log('Linha 3')
@@ -47,11 +49,7 @@ console.log(lesserThanFive)
 */
 
 const prices = [12, 19, 7, 209]
-let totalPrice = 0
-
-for (let i = 0; i < prices.length; i++) {
-  totalPrice += prices[i]
-}
+let totalPrice = prices.reduce((accumulator, number) => accumulator + number)
 
 console.log(`Preço total: ${totalPrice}`)
 
@@ -63,6 +61,8 @@ console.log(`Preço total: ${totalPrice}`)
 */
 
 let car = { color: 'amarelo' }
+car['color'] = 'azul'
+console.log(car.color)
 
 /*
   06
@@ -73,6 +73,13 @@ let car = { color: 'amarelo' }
   - Se todos os argumentos forem passados, retorne a string 'A função foi 
     invocada com 3 argumentos'.
 */
+function threeArguments(first, second, third) {
+  if (first === undefined | second === undefined | third === undefined) {
+    console.log('A função deve ser invocada com 3 argumentos')
+  }
+}
+threeArguments(2,3)
+
 
 /*
   07
