@@ -4,19 +4,15 @@
   - Implemente um código assíncrono entre os console.log() abaixo.
 */
 
+console.log("Linha 1");
+console.log("Linha 2");
+console.log("Linha 3");
+console.log("Linha 4");
 
-
-console.log('Linha 1')
-console.log('Linha 2')
-console.log('Linha 3')
-console.log('Linha 4')
-
-
-
-console.log('Linha 5')
-console.log('Linha 6')
-console.log('Linha 7')
-console.log('Linha 8')
+console.log("Linha 5");
+console.log("Linha 6");
+console.log("Linha 7");
+console.log("Linha 8");
 
 /*
   02
@@ -25,8 +21,8 @@ console.log('Linha 8')
     "logGreeting" ser exibida no console.
 */
 
-function logGreeting (name) {
-  console.log(`olá, ${name}`)
+function logGreeting(name) {
+	console.log(`olá, ${name}`);
 }
 
 // x(logGreeting)
@@ -37,10 +33,10 @@ function logGreeting (name) {
   - O código abaixo possui uma parte que pode ser isolada. Isole-a.
 */
 
-const numbers = [3, 4, 10, 20]
-const lesserThanFive = numbers.filter(num => num < 5)
+const numbers = [3, 4, 10, 20];
+const lesserThanFive = numbers.filter((num) => num < 5);
 
-console.log(lesserThanFive)
+console.log(lesserThanFive);
 
 /*
   04
@@ -48,10 +44,10 @@ console.log(lesserThanFive)
   - Refatore o código abaixo.
 */
 
-const prices = [12, 19, 7, 209]
-let totalPrice = prices.reduce((accumulator, number) => accumulator + number)
+const prices = [12, 19, 7, 209];
+let totalPrice = prices.reduce((accumulator, number) => accumulator + number);
 
-console.log(`Preço total: ${totalPrice}`)
+console.log(`Preço total: ${totalPrice}`);
 
 /*
   05
@@ -60,9 +56,9 @@ console.log(`Preço total: ${totalPrice}`)
   - Não insira `car.color = azul`.
 */
 
-let car = { color: 'amarelo' }
-car['color'] = 'azul'
-console.log(car.color)
+let car = { color: "amarelo" };
+car["color"] = "azul";
+console.log(car.color);
 
 /*
   06
@@ -74,12 +70,15 @@ console.log(car.color)
     invocada com 3 argumentos'.
 */
 function threeArguments(first, second, third) {
-  if (first === undefined | second === undefined | third === undefined) {
-    console.log('A função deve ser invocada com 3 argumentos')
-  }
+	if (
+		(first === undefined) |
+		(second === undefined) |
+		(third === undefined)
+	) {
+		console.log("A função deve ser invocada com 3 argumentos");
+	}
 }
-threeArguments(2,3)
-
+threeArguments(2, 3);
 
 /*
   07
@@ -104,6 +103,14 @@ threeArguments(2,3)
 */
 
 let booksBox = {
-  spaces: 5,
-  booksIn: 0
+	spaces: 5,
+	booksIn: 0,
+	addBook: function (booksToBeAdded) {
+    while ( booksToBeAdded > 0) {
+      this.booksIn += 1
+      --booksToBeAdded
+    }
+  }
 }
+booksBox.addBook(3)
+console.log(booksBox.booksIn)
