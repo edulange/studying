@@ -1,3 +1,13 @@
+console.log("studying async, fetch");
+
+function pegaDados() {
+	const resultado = fetch("https://api.github.com/users/edugod") // disparamos uma requisição
+  console.log(resultado)
+  fetch("https://api.github.com/users/edugod").then(res => console.log(res))
+}
+pegaDados()
+
+
 /*
   01
 
