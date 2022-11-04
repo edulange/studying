@@ -106,11 +106,23 @@ let booksBox = {
 	spaces: 5,
 	booksIn: 0,
 	addBook: function (booksToBeAdded) {
+    if (booksToBeAdded > 5) {
+      console.log(`só cabem mais ${(5 - this.booksIn)} livros`)
+    }
     while ( booksToBeAdded > 0) {
-      this.booksIn += 1
-      --booksToBeAdded
+      if (this.booksIn === 4) {
+        console.log ("livro")
+      }
+      if( this.booksIn <= 4) {
+        --booksToBeAdded
+        this.booksIn += 1
+        console.log(`Já há ${this.booksIn} livros na caixa`)
+
+      } else {
+        console.log("A caixa já está cheia")
+        break;
+      }
     }
   }
 }
-booksBox.addBook(3)
-console.log(booksBox.booksIn)
+booksBox.addBook(7)
