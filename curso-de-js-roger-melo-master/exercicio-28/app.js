@@ -1,11 +1,20 @@
 console.log("studying async, fetch");
 
-function pegaDados() {
-	const resultado = fetch("https://api.github.com/users/edugod") // disparamos uma requisição
-  console.log(resultado)
-  fetch("https://api.github.com/users/edugod").then(res => console.log(res))
+async function pegaDados() {
+	const resultado = await fetch("https://api.github.com/users/edugod") // disparamos uma requisição
+  const resultadoConvertido = await resultado.json()
+  console.log('resultado:', resultado)
+  console.log('resultadoJSON', resultadoConvertido)
+
+
 }
 pegaDados()
+
+async function testeSimples() { return 'testando'} 
+testeSimples()
+//basicamente: se eu crio uma função ela retorna uma função
+// se eu deixo o async na frente, ela vira uma promise de uma função
+///======================= pra eu utilizar await, eu preciso chamar alguém de await
 
 
 /*
