@@ -195,3 +195,25 @@ console.log(func([]), 'truty func')
   Dica: propriedades de objetos podem ser declaradas como strings.
 */
 
+function idk(bookName) {
+  book1 = {
+    pageNumbers: 1,
+    Author: "Idk",
+    Editor: "my Eggs",
+  }
+  book2 = {
+    pageNumbers: 2,
+    Author: "Idk2",
+    Editor: "my Eggs2",
+  }
+  book3 = {
+    pageNumbers: 3,
+    Author: "Idk3",
+    Editor: "my Eggs3",
+  }
+  if(bookName === book1) {
+    console.log('ok')
+  }
+}
+
+console.log(idk(book1))
