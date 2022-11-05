@@ -37,12 +37,11 @@ testeSimples()
 */
 
 async function getPikachu() {
-  const resultado = await fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
-  console.log(resultado)
+	const resultado = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
+	console.log(resultado);
 }
 
-getPikachu()
-
+getPikachu();
 
 /*
   02
@@ -60,16 +59,15 @@ getPikachu()
 */
 
 const personalInfo = {
-  name: 'Eduardo',
-  lastName: 'Lange',
-  sex: 'Male',
-  age: '28',
-  height: '173',
-  wheight: '100',
-  walking: false,
-  metersWalked: 0
-}
-
+	name: "Eduardo",
+	lastName: "Lange",
+	sex: "Male",
+	age: "28",
+	height: "1.73",
+	wheight: "100",
+	walking: false,
+	metersWalked: 0,
+};
 
 /*
   03
@@ -81,11 +79,18 @@ const personalInfo = {
 */
 
 personalInfo.speaking = function () {
-  console.log('123')
-}
-
-console.log(personalInfo)
-
+	console.log("123");
+};
+personalInfo.addAge = function () {
+	++this.age;
+};
+personalInfo.addAge();
+personalInfo.addAge();
+personalInfo.addAge();
+personalInfo.addAge();
+personalInfo.addAge();
+console.log(personalInfo);
+console.log(personalInfo.age);
 
 /*
   04
@@ -97,6 +102,15 @@ console.log(personalInfo)
   - Após criar o método, faça a pessoa caminhar alguns metros, invocando o 
     método 4x, com diferentes metragens passadas por parâmetro.
 */
+personalInfo.sumMetersWalked = function (metersToSum) {
+	this.walking = true;
+	this.metersWalked = this.metersWalked + metersToSum;
+};
+personalInfo.sumMetersWalked(4);
+personalInfo.sumMetersWalked(2);
+personalInfo.sumMetersWalked(2.5);
+personalInfo.sumMetersWalked(8.67);
+console.log(personalInfo.walking, personalInfo.metersWalked);
 
 /*
   05
@@ -114,6 +128,13 @@ console.log(personalInfo)
     - Se a quantidade de metros caminhados for 1, substitua "metros" por 
       "metro", no singular.
 */
+personalInfo.myinformation = function () {
+	return `Oi. Eu sou o ${this.name} ${this.lastName}, tenho ${this.age} anos, ${this.height} metros de altura, 
+  peso ${this.wheight} quilos e, só hoje, eu já caminhei ${this.metersWalked}
+  metros.`;
+};
+
+console.log(personalInfo.myinformation());
 
 /*
   06
@@ -126,6 +147,34 @@ console.log(personalInfo)
     valor truthy;
     - Faça isso até que 7 valores truthy sejam passados.
 */
+
+let booleano;
+function func(value) {
+  if (value) {
+    booleano = true
+    return booleano
+  } else {
+    booleano = false
+    return booleano
+  }
+}
+console.log(func(false), 'falsy func')
+console.log(func(''), 'falsy func')
+console.log(func(0), 'falsy func')
+console.log(func(undefined), 'falsy func')
+console.log(func(null), 'falsy func')
+console.log(func(NaN), 'falsy func')
+
+
+console.log(func(1), 'truty func')
+console.log(func('false'), 'truty func')
+console.log(func('0'), 'truty func')
+console.log(func({}), 'truty func')
+console.log(func(function(){}), 'truty func')
+console.log(func([]), 'truty func')
+
+
+
 
 /*
   07
@@ -145,3 +194,4 @@ console.log(personalInfo)
 
   Dica: propriedades de objetos podem ser declaradas como strings.
 */
+
