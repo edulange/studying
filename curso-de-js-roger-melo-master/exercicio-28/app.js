@@ -1,3 +1,4 @@
+/*
 console.log("studying async, fetch");
 
 async function pegaDados() {
@@ -15,7 +16,7 @@ testeSimples()
 //basicamente: se eu crio uma função ela retorna uma função
 // se eu deixo o async na frente, ela vira uma promise de uma função
 ///======================= pra eu utilizar await, eu preciso chamar alguém de await
-
+*/
 
 /*
   01
@@ -35,6 +36,14 @@ testeSimples()
   - Teste também a verificação do item acima.
 */
 
+async function getPikachu() {
+  const resultado = await fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
+  console.log(resultado)
+}
+
+getPikachu()
+
+
 /*
   02
 
@@ -50,6 +59,18 @@ testeSimples()
     - Quantos metros você caminhou (number iniciado em 0).
 */
 
+const personalInfo = {
+  name: 'Eduardo',
+  lastName: 'Lange',
+  sex: 'Male',
+  age: '28',
+  height: '173',
+  wheight: '100',
+  walking: false,
+  metersWalked: 0
+}
+
+
 /*
   03
 
@@ -58,6 +79,13 @@ testeSimples()
   - A cada vez que o método é invocado, 1 deve ser somado à idade atual;
   - Após criar o método, adicione 5 anos à idade do objeto.
 */
+
+personalInfo.speaking = function () {
+  console.log('123')
+}
+
+console.log(personalInfo)
+
 
 /*
   04
