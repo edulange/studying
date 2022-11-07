@@ -12,6 +12,16 @@
     - Os requests devem ser sequenciais. Ou seja, um request só deve ser 
       executado quando o request anterior for finalizado.
 */
+function pokeapi() {
+  const url = 'https://pokeapi.co/api/v2/pokemon/ditto'
+
+  fetch(url)
+    .then(res => res.json())
+    .then(pokemon => {
+      console.log(pokemon)
+    })
+}
+pokeapi()
 
 /*
   02
