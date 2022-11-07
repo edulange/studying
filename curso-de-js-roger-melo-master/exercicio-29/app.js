@@ -42,6 +42,22 @@ pokeapi()
     2) Pesquisar no MDN.
 */
 
+function mapping(numbers) {
+  let testArr = [];
+  for (let i = 0; i < numbers.length; i++) {
+    const element = numbers[i];
+    testArr.push(element * 2)
+  }
+  console.log(testArr)
+}
+mapping([1, 2, 3])
+mapping([2, 4, 6])
+
+let testingMap = [1 , 2, 3]
+console.log(testingMap.map((element) => element * 2))
+console.log(testingMap)
+
+
 /*
   03
 
