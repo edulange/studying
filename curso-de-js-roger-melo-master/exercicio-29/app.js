@@ -138,3 +138,11 @@ const people = [
   { id: 9 , name: 'Gabriel', age: 20, federativeUnit: 'São Paulo' },
   { id: 73, name: 'Aline', age: 19, federativeUnit: 'Brasília' }
 ]
+
+function objectify (key, value) {
+  return {
+    [key]: value
+  }
+}
+
+console.log(objectify('age', 18))
