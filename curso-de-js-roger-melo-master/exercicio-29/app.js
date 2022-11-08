@@ -146,3 +146,8 @@ function objectify (key, value) {
 }
 
 console.log(objectify('age', 18))
+
+console.log('já percebeu que eu estou sempre dando uma desculpa?')
+setTimeout(() => {
+  console.log('SEMPREEEE')
+}, 1000)
