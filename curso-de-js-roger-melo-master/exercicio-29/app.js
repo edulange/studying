@@ -67,10 +67,10 @@ console.log(testingMap)
 
 const person = {
   name: 'Roger',
-  getName: () => this.name
+  getName: () => person.name
 }
 
-// console.log(person.getName())
+console.log(person.getName(), 'aqui')
 
 /*
   04
@@ -81,8 +81,8 @@ const person = {
     delas.
 */
 
-const x = 'x'
-// const x = 'y'
+let x = 'x'
+x = 'y'
 
 /*
   05
@@ -113,8 +113,21 @@ console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
     a mensagem 'Não temos o equivalente hexadecimal para COR';
   - Exiba o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-
-
+function convertToHex (color) {
+  let colors = {
+    green: "62F81D",
+    blue: "1DCAF8",
+    red: "F81D24",
+    yellow: "F8EE1D",
+    black: "000000"
+  }
+  if (colors[color] != undefined) {
+    console.log(`O hexadecimal para a cor ${color} é ${colors[color]}`)
+  } else {
+    console.log('a cor não está cadastrada')
+  }
+}
+convertToHex('yellow')
 /*
   07
 
