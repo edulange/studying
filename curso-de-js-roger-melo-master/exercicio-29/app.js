@@ -152,15 +152,18 @@ const people = [
   { id: 73, name: 'Aline', age: 19, federativeUnit: 'Brasília' }
 ]
 
-function objectify (key, value) {
+function creatingAnObject(array) {
+  people.forEach(element => {
+    console.log(element.age)
+  });
+}
+
+creatingAnObject(people)
+
+function objectify(key, value) {
   return {
     [key]: value
   }
 }
 
-console.log(objectify('age', 18))
-
-console.log('já percebeu que eu estou sempre dando uma desculpa?')
-setTimeout(() => {
-  console.log('SEMPREEEE')
-}, 1000)
+console.log(objectify('name', 'tyler'))
