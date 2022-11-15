@@ -22,6 +22,17 @@
   - Se o operador não for válido, retorne a mensagem "Operação inválida."
 */
 
+function calculator(operator) {
+	if (operator == "+"||operator == "-"||operator == "*"||operator == "/"||operator == "%") {
+		function numbers(num1, num2) {
+			let finalOperator = operator.replace("", "");
+			return `Resultado da operação: ${num1} ${finalOperator} ${num2} = RESULTADO.`;
+		}
+		console.log(numbers(1, 2));
+	}
+}
+calculator("+");
+
 /*
   03
 
@@ -35,6 +46,25 @@
   - Crie um novo array chamado `newSul`, que recebe somente os estados do sul,
     pegando do array `brasil`. Não remova esses itens de `brasil`.
 */
+
+let sul = ['Rio Grande do Sul', 'Santa Catarina', 'Paraná']
+let sudeste = ["São Paulo", "Rio de Janeiro", "Espírito Santo", "Minas Gerais"]
+const brasil = sul.concat(sudeste)
+console.log(brasil)
+let norte = ['Para', 'Amapá', "Roraima"]
+brasil.unshift(norte[0])
+brasil.unshift(norte[1])
+brasil.unshift(norte[2])
+console.log(brasil)
+console.log(brasil.shift())
+let newSul = []
+brasil.filter((estado) => {
+  if(estado === sul[0] || estado === sul[1] || estado === sul[2]) {
+    newSul.push(estado)
+  }
+})
+console.log(newSul)
+
 
 /*
   04
@@ -54,6 +84,8 @@
     console: "Nem todos os estados tem mais de 7 letras.". Pesquise pelo método 
     every.
 */
+let nordeste = ['Ceará', 'Piauí', 'Alagoas', 'Sergipe']
+const newSudeste = []
 
 /*
   05
