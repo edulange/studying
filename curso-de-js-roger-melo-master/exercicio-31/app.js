@@ -1,4 +1,3 @@
-console.log('testando')
 /*
   01
 
@@ -9,6 +8,29 @@ console.log('testando')
     do GitHub.
 */
 
+const getGitHub = async () => {
+  //FETCH = é o novo jeito de fazer requisições assíncronas,  para obter dados sem que a págian precisa ser carregada
+  url = 'https://api.github.com/users/edugod'
+  const response = await fetch(url) // enquanto não chegar a requisição do fetch, NADA abaixo será executado (pq tem o await)
+  // o await gera obrigatóriamente uma promise
+  console.log(response)
+
+}
+getGitHub()
+
+/*
+const fetchGIT = () => { 
+  const id = 'edugod'
+  const url = `https://api.github.com/users/edugod`
+
+  fetch(url)
+            .then(response => response.json())
+            .then(usuario => {
+              console.log(usuario)
+            })
+}
+fetchGIT()
+*/
 /*
   02
 
