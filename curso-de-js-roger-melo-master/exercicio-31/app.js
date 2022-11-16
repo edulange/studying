@@ -40,6 +40,13 @@ fetchGIT()
 */
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const oddNumbers = numbers.filter(number => {
+  if(number % 2 === 0 || number % 3 === 0) {
+    return number
+  }
+})
+
+console.log(oddNumbers)
 
 /*
   03
@@ -54,6 +61,10 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     - Natália => "PNaPtáPlia";
     - Rafaela => "PRaPfaPePla".
 */
+
+const myName = ['E', 'du', 'ar', 'do']
+
+console.log(myName.map(silaba => 'p' + silaba).join(''))
 
 /*
   04
