@@ -113,6 +113,8 @@ console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
     a mensagem 'Não temos o equivalente hexadecimal para COR';
   - Exiba o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
+
+/*
 function convertToHex (color) {
   let colors = {
     green: "62F81D",
@@ -128,6 +130,26 @@ function convertToHex (color) {
   }
 }
 convertToHex('yellow')
+*/
+
+function convertToHex (color) {
+  let colors = {
+    green: "62F81D",
+    blue: "1DCAF8",
+    red: "F81D24",
+    yellow: "F8EE1D",
+    black: "000000"
+  }
+  return colors[color] 
+  ? `O hexadecimal para a cor ${color} é ${colors[color]}` 
+  : `Não temos o equivalente hexadecimal para ${color}`
+}
+colors = ['green', 'white', 'black', 'yellow', 'blue', 'red', 'purple', 'pink']
+
+const logColorMessage = color => console.log(convertToHex(color))
+colors.forEach(logColorMessage)
+
+
 /*
   07
 
