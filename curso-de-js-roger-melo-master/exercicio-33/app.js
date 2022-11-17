@@ -5,7 +5,7 @@
   - Solucione esse problema sem declarar uma constante "book".
 */
 
-// console.log(book)
+console.log('book')
 
 /*
   02
@@ -16,7 +16,12 @@
     - O 2º item é o 1º item do array recebido por argumento;
   - Implemente a função da forma mais concisa que você conseguir.
 */
-
+const threeItems = (arr) => {
+  let newArr = [];
+  newArr.push(arr[2], arr[0])
+  console.log(newArr)
+}
+threeItems([1,2,3])
 /*
   03
 
@@ -29,6 +34,7 @@ const topics = [
   { id: 2, name: 'Negócios & finanças'},
   { id: 3, name: 'Carreiras'}
 ]
+
 
 /*
   04
