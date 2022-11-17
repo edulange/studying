@@ -80,6 +80,11 @@ console.log(myName.map(silaba => 'p' + silaba).join(''))
 
   Dica: pesquise pelo método split.
 */
+const myFirstName = 'Eduardo'
+for (let i = 0; i < myFirstName.length; i++) {
+  const element = myFirstName[i];
+  console.log(`${element} é a ${i+1}ª letra do meu nome.`)
+}
 
 /*
   05
@@ -93,6 +98,12 @@ console.log(myName.map(silaba => 'p' + silaba).join(''))
 
   Dica: pesquise pelo método Object.keys().
 */
+const objeto = {
+  name: String,
+  lastname: String,
+  age: Number
+}
+console.log(Object.keys(objeto))
 
 /*
   06
@@ -108,6 +119,16 @@ console.log(myName.map(silaba => 'p' + silaba).join(''))
 */
 
 const scores = [100, 90, 85, 100, 60, 85, 100, 90, 55, 75, 60]
+
+function Occurrencies(arr, searchedValue) {
+  let accumulator = 0;
+  arr.map(number => number === searchedValue ? ++accumulator : '')
+  console.log(accumulator)
+}
+Occurrencies(scores, 85)
+
+
+
 
 /*
   07
@@ -132,3 +153,20 @@ const scores = [100, 90, 85, 100, 60, 85, 100, 90, 55, 75, 60]
   Dica: lembre-se que o método filter inclui o item em questão no novo array 
   que está sendo gerado **apenas** se a função retorna um valor truthy.
 */
+//o método filter cria um NOVO array, que apenas contém os valores truthy
+
+let filterArray = [1, 2, 3, 4, 3, 2, 4, 'ola']
+
+const filter = (arr, func) => {
+  let newArray = []
+
+  arr.forEach((item, INDEX, array) => {  // o segundo parâmetro do forEach é INDEX por isso!!!
+    func(item, INDEX, array) ? newArray.push(item) : ''
+  })
+
+  return newArray
+}
+
+console.log(filter([1, 2, 3, 2, 1, 5], (item, index, array) =>
+index === array.indexOf(item)))
+
