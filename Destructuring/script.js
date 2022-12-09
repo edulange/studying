@@ -52,6 +52,7 @@ const comidas = {
 };
 
 liquidificador(comidas.pera);
+//-------------------------------------------------------------------------
 //--------------------------===============
 const numerosPares = [2, 4, 6];
 const numerosImpares = [1, 3, 5];
@@ -61,6 +62,7 @@ console.log("numeros s/ destructu", numSemDestruc);
 const numComDestruc = [...numerosPares, ...numerosImpares];
 console.log("numeros c/ destructuring", numComDestruc);
 
+//-------------------------------------------------------------------------
 /*
 const num1 = 1
 const num2 = 2
@@ -72,8 +74,28 @@ console.log('num1', num1)
 console.log('num2', num2)
 console.log('OutrosNum', outrosNum)
 
-
+//-------------------------------------------------------------------------
 //const [nome1 = 'Eduardo'] = [1]
 // aqui se eu der um console.log(nome1) ele vai printar nome1 = 1
 const [nome1 = 'Eduardo'] = []
 console.log('nome1', nome1) //já aqui, ele printa Eduardo, pq ele seria undefined
+//ideal fazer esse lancezinho para situações em que trabalhamos com dados.
+
+const pessoa = {
+    nome: 'Eduzeira',
+    age: '28',
+    graduated: true
+}
+
+const pessoaComTelefone = {...pessoa, telefone: 51997308699}
+console.log('pessoa', pessoaComTelefone)
+
+//const nome = pessoa.nome é igual
+const { nome } = pessoa
+console.log('nome', nome)
+
+function printData({ age, graduated }) {
+    console.log(age, graduated) 
+}
+
+printData(pessoa)
