@@ -99,3 +99,8 @@ function printData({ age, graduated }) {
 }
 
 printData(pessoa)
+
+const testingSkip = [:smile:]
+//------------------------------------------
+const [,, ...skip] = testingSkip
+console.log('three', skip)
