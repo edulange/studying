@@ -70,37 +70,55 @@ são iguais
 const [num1, num2] = [1, 2]
 */
 const [num1, num2, ...outrosNum] = [1, 2, 3, 4, 5, 6]; //é a mesma coisa q em cima
-console.log('num1', num1)
-console.log('num2', num2)
-console.log('OutrosNum', outrosNum)
+console.log("num1", num1);
+console.log("num2", num2);
+console.log("OutrosNum", outrosNum);
 
 //-------------------------------------------------------------------------
 //const [nome1 = 'Eduardo'] = [1]
 // aqui se eu der um console.log(nome1) ele vai printar nome1 = 1
-const [nome1 = 'Eduardo'] = []
-console.log('nome1', nome1) //já aqui, ele printa Eduardo, pq ele seria undefined
+const [nome1 = "Eduardo"] = [];
+console.log("nome1", nome1); //já aqui, ele printa Eduardo, pq ele seria undefined
 //ideal fazer esse lancezinho para situações em que trabalhamos com dados.
 
 const pessoa = {
-    nome: 'Eduzeira',
-    age: '28',
-    graduated: true
-}
+	nome: "Eduzeira",
+	age: "28",
+	graduated: true,
+};
 
-const pessoaComTelefone = {...pessoa, telefone: 51997308699}
-console.log('pessoa', pessoaComTelefone)
+const pessoaComTelefone = { ...pessoa, telefone: 51997308699 };
+console.log("pessoa", pessoaComTelefone);
 
 //const nome = pessoa.nome é igual
-const { nome } = pessoa
-console.log('nome', nome)
+const { nome } = pessoa;
+console.log("nome", nome);
 
 function printData({ age, graduated }) {
-    console.log(age, graduated) 
+	console.log(age, graduated);
 }
 
-printData(pessoa)
+printData(pessoa);
 
-const testingSkip = [:smile:]
 //------------------------------------------
-const [,, ...skip] = testingSkip
-console.log('three', skip)
+const testingSkip = [, "🥓", "🍟"];
+const [pizza = "🍕", bacon, fries] = testingSkip;
+console.log("testingSkip", testingSkip);
+console.log(
+	`no caso, como o testpizza é empty/undefined, no destructuring eu estabeleci um valor para ele, 
+	então ele pega primeiro  ovalor do Array
+	, não tem nada ou é undefined? então vale o do destructuring`,
+	pizza
+);
+console.log("pizza, bacon, fries", pizza, bacon, fries);
+
+const obj = {
+	shroom: "🍄",
+	banana: "🍌",
+	pepper: "🌶️",
+};
+
+const { shroom = mushroom, banana, pepper } = obj;
+
+console.log('mushroom', mushroom)
+https://www.youtube.com/watch?v=UgEaJBz3bjY
