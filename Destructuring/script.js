@@ -121,4 +121,4 @@ const obj = {
 const { shroom = mushroom, banana, pepper } = obj;
 
 console.log('mushroom', mushroom)
-https://www.youtube.com/watch?v=UgEaJBz3bjY
+//https://www.youtube.com/watch?v=UgEaJBz3bjY
