@@ -15,3 +15,5 @@ function do_math() {
 }
 
 do_math()
+
+console.log('first', first)
